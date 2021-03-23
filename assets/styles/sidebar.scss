@@ -1,0 +1,34 @@
+
+.sidebar-container { // 菜单栏
+	transition: width .28s;
+	width: $sideBarWidth !important;
+	background-color: $menuBg;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1002;
+	overflow: hidden;
+	color: $menuColor;
+}
+
+.main-container { // 主内容
+	transition: width .28s;
+	margin-left: $sideBarWidth;
+	position: relative;
+	min-height: 100%;
+}
+
+.hideSidebar { // 折叠后样式
+	.sidebar-container {
+		width: $sidebarCollapseWidth !important;
+	}
+	.fix-header {
+		width: calc(100% - $sidebarCollapseWidth);
+	}
+	.main-container {
+		margin-left: $sidebarCollapseWidth;
+	}
+}
